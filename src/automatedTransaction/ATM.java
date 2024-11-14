@@ -15,11 +15,14 @@ public class ATM {
     protected static void pinNum(){
         int correctPin = 5572;
         int attempts = 3;
+
         System.out.println("Enter the pin:");
         int pin = scanner.nextInt();
+
         for(int i=1; i<attempts; i++){
             System.out.println("Incorrect, Enter the pin again:");
             pin = scanner.nextInt();
+
             if(pin == correctPin){
                 homeScreen();
             }
@@ -30,7 +33,7 @@ public class ATM {
     }
 
     public static void homeScreen(){
-        System.out.println("1 for show balance || 2 to add money || 3 to widthdraw money || 4 to quit" );
+        System.out.println("1 for show balance || 2 to add money || 3 to withdraw money || 4 to quit" );
         int choice = scanner.nextInt();
 
         if(choice == 1){
@@ -39,10 +42,7 @@ public class ATM {
             addMoney();
         }else if(choice == 3){
             widthdrawMoney();
-        }else{
-            System.exit(0);
         }
-
     }
 
     private static void showBalance(){
